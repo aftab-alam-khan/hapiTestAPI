@@ -1,0 +1,33 @@
+{
+  "name": "code-test",
+  "version": "0.0.1",
+  "description": "Code Test base repository",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api",
+    "test": "lab test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pagerinc/node-code-test.git"
+  },
+  "keywords": [
+    "node",
+    "hapi",
+    "recruiting",
+    "test"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pagerinc/node-code-test/issues"
+  },
+  "homepage": "https://github.com/pagerinc/node-code-test#readme",
+  "dependencies": {
+    "hapi": "^17.6.0"
+  },
+  "devDependencies": {
+    "code": "^5.2.0",
+    "lab": "^16.1.0"
+  }
+}

@@ -11,77 +11,33 @@ const server = Hapi.server({
 const routes = [
     {
         method: 'GET',
-        path: '/',
-        handler: (request) => {
-
-            const { method, path, headers, query, params } = request;
-            request.log(['info'], { method, path, headers, query, params });
-
-            return 'Hello World!';
-        }
-    },
-    {
-        method: 'GET',
         path: '/locations',
-        handler: async (request) => {
+        handler: async (request, h) => {
 
-            const db = request.server.db;
-            const locations = db.collection('location');
+            const db = server.app.db;
+            const locationCollection = db.collection('locations');
 
             // query all locations
-            const documents = await locations.find({}).toArray();
-
-            // prepare response
-            // const response = documents.map((d) => {
-            //     delete d._id;
-            //     return d;
-            // });
-            
+            const documents = await locationCollection.find({}).toArray();
             return documents;
-        }
-    },
-    {
-        method: 'GET',
-        path: '/locations/{locationId}/items',
-        handler: async (request) => {
-
-            return `implement the search for location:${request.params.locationId}`;
         }
     }
 ];
 
 const init = async () => {
+    
+    // connect to DB
+    const url = 'mongodb://localhost:27017/local-grocery-store';
+    const client = new MongoClient(url, {  useNewUrlParser: true });
+    await client.connect();
+    
+    const db = client.db();
+    server.app.db = db;
+    
+    console.log("Connected successfully to mongo");
 
-    await server.register({
-        plugin: {
-            register: async (server, options) => {
-
-                // connection URL
-                const url = 'mongodb://localhost:27017';
-                const dbName = 'local-grocery-store';
-                
-                // connect
-                const client = new MongoClient(url, {  useNewUrlParser: true });
-                await client.connect();
-
-                console.log("Connected successfully to mongo");
-            
-                const db = client.db(dbName);
-                server.decorate('server', 'db', db);
-                server.app.db = db;
-            },
-            name: 'db'
-        }
-    });
-
-    await server.register({
-        plugin: {
-            register: (server, options) => {
-                server.route(routes);
-            },
-            name: 'locations'
-        }
-    });
+    // routes configuration
+    server.route(routes);
 
     try {
         if (!module.parent) {

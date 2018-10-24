@@ -12,14 +12,4 @@ services:
     ports:
         - 27017:27017
     command: mongod --smallfiles --logpath=/dev/null 
-  # api:
-  #   image: pager-code-test
-  #   build: .
-  #   environment:
-  #     NODE_ENV: production
-  #   ports:
-  #     - 3000:3000
-  #   links:
-  #     - mongodb
-  #   depends_on:
-  #     - mongodb
+

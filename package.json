@@ -4,8 +4,8 @@
   "description": "Code Test base repository",
   "main": "api.js",
   "scripts": {
-    "start": "node api",
-    "test": "lab test"
+    "start": "node server",
+    "test": "lab -v test"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/pagerinc/node-code-test#readme",
   "dependencies": {
-    "hapi": "^17.6.0"
+    "hapi": "^17.6.0",
+    "mongodb": "^3.1.8"
   },
   "devDependencies": {
     "code": "^5.2.0",

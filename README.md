@@ -8,6 +8,10 @@ We have already setup 1 endpoint and it's corresponding unit tests.
 
 The unit tests also include (althought commented out) other unit tests for 2 more endpoints that you need to implement with the help of one of our engineers.
 
+## Goal
+
+The goal of this exercise is to assess your knowledge of our stack and how you work with frameworks or tools you are not familiar with: how you search the web for documentation, how you learn and test a new framework, etc.
+
 ## Setup
 
 This project needs Node (version >= 8) and Docker installed on your machine.

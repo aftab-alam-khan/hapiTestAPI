@@ -12,6 +12,7 @@ The unit tests also include (althought commented out) other unit tests for 2 mor
 
 This project needs Node (version >= 8) and Docker installed on your machine.
 
+- Download this project to your computer
 - run `npm i`
 - run `docker compose up` in another terminal session
 - run `npm test`
@@ -41,5 +42,3 @@ Thanks and happy coding!
     http://mongodb.github.io/node-mongodb-native/3.1/quick-start/quick-start/
     
     
-
-![You got this](https://media.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy.gif)

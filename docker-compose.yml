@@ -1,15 +1,12 @@
-version: '2.1'
+version: '3.7'
 
 services:
   mongodb:
-    image: mongo:latest
-    container_name: "mongodb"
+    image: mongo:4.0.3-xenial
     environment:
       - MONGO_DATA_DIR=/data/db
-      - MONGO_LOG_DIR=/dev/null
     volumes:
       - ./data/db:/data/db
     ports:
-        - 27017:27017
-    command: mongod --smallfiles --logpath=/dev/null 
-
+      - 27017:27017
+    command: ["mongod", "--smallfiles"]

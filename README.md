@@ -18,7 +18,8 @@ This project needs Node (version >= 8) and Docker installed on your machine.
 
 - Download this project to your computer
 - run `npm i`
-- run `docker compose up` in another terminal session
+- run `docker-compose up -d` (if you skip the `-d`, this command will run in
+    foreground)
 - run `npm test`
 - Follow your interviewer instructions on what unit tests you should uncomment and start coding
 

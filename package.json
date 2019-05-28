@@ -12,7 +12,7 @@
     "url": "git+ssh://git@github.com/pagerinc/node-code-test.git"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "keywords": [
     "node",

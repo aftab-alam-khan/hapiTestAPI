@@ -63,7 +63,7 @@ const mockItems = [
         name: 'MILK1',
         description: 'Milk 1 gal', 
         stock: 5, 
-        category: 'DIARY',
+        category: 'DAIRY',
         price: 2.99
     },
     {

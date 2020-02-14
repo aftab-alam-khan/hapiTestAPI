@@ -1,15 +1,13 @@
 'use strict';
 
-const Lab = require('lab');
-const Code = require('code');
+const Code = require('@hapi/code');
+const Lab = require('@hapi/lab');
 const Server = require('../server');
 let server;
 
 // test shortcuts
 const lab = exports.lab = Lab.script();
-const before = lab.before;
-const after = lab.after;
-const describe = lab.describe;
+const { describe, before, after } = lab;
 const expect = Code.expect;
 const it = lab.it;
 
@@ -88,9 +86,9 @@ const mockItems = [
 
 async function cleanDatabase(db) {
     
-    await db.collection('locations').remove({});
-    await db.collection('items').remove({});
-    await db.collection('orders').remove({});
+    await db.collection('locations').deleteMany({});
+    await db.collection('items').deleteMany({});
+    await db.collection('orders').deleteMany({});
 }
 
 describe('Local Grocery API', () => {

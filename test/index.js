@@ -175,7 +175,7 @@ describe('Local Grocery API', () => {
     //                 quantity: 1
     //             },
     //             {
-    //                 itemId: 23,
+    //                 itemId: 21,
     //                 quantity: 5
     //             }]
     //         }
@@ -194,10 +194,10 @@ describe('Local Grocery API', () => {
     //             quantity: 1
     //         },
     //         {
-    //             itemId: 23,
+    //             itemId: 21,
     //             quantity: 5
     //         }],
-    //         total: 45.23
+    //         total: 20.18
     //     });
     // });
 });

@@ -115,7 +115,7 @@ describe('Local Grocery API', () => {
         await server.stop();
     });
 
-    it('GET /locations/', async () => {
+    it('returns all locations: GET /locations/', async () => {
 
         const response = await server.inject({
             method: 'GET',
@@ -126,20 +126,20 @@ describe('Local Grocery API', () => {
         expect(response.result).to.equal(mockLocations);
     });
 
-    // it('GET /locations/:locationId:/items', async () => {
+    // it('returns items sold in a location: GET /locations/{locationId}/items', async () => {
 
     //     const response = await server.inject({
     //         method: 'GET',
     //         url: '/locations/1/items'
     //     });
 
+    //     const locationItems = mockItems.filter((i) => i.locationId === 1);
+
     //     expect(response.statusCode).to.equal(200);
-    //     expect(response.result).to.equal(mockItems.filter((i) => {
-    //         return i.locationId === 1
-    //     }));
+    //     expect(response.result).to.equal(locationItems);
     // });
 
-    // it('GET /locations/:locationId:/items -> No match', async () => {
+    // it('returns empty when no items in a location: GET /locations/{locationId}/items', async () => {
 
     //     const response = await server.inject({
     //         method: 'GET',
@@ -150,7 +150,7 @@ describe('Local Grocery API', () => {
     //     expect(response.result).to.equal([]);
     // });
 
-    // it('GET /locations/:locationId:/items -> Location not found', async () => {
+    // it('returns 404 when location not found: GET /locations/{locationId}/items', async () => {
 
     //     const response = await server.inject({
     //         method: 'GET',
@@ -160,7 +160,10 @@ describe('Local Grocery API', () => {
     //     expect(response.statusCode).to.equal(404);
     // });
 
-    // it('POST /locations/:locationId:/order', async () => {
+    // it('returns a created order: POST /locations/{locationId}/order', async () => {
+
+    //     const db = server.app.db;
+    //     const ordersCollection = db.collection('orders');
 
     //     const response = await server.inject({
     //         method: 'POST',
@@ -181,6 +184,9 @@ describe('Local Grocery API', () => {
     //     expect(response.statusCode).to.equal(201);
 
     //     delete response.result._id;
+    //     const savedOrder = await ordersCollection.findOne({ customerId: 787 });
+
+    //     expect(savedOrder).to.exist();
     //     expect(response.result).to.equal({
     //         customerId: 787,
     //         items: [{

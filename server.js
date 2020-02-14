@@ -1,4 +1,4 @@
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 const MongoClient = require('mongodb').MongoClient;
 
 const server = Hapi.server({
@@ -28,7 +28,7 @@ const init = async () => {
     
     // connect to DB
     const url = 'mongodb://localhost:27017/local-grocery-store';
-    const client = new MongoClient(url, {  useNewUrlParser: true });
+    const client = new MongoClient(url, {  useNewUrlParser: true, useUnifiedTopology: true });
     await client.connect();
     
     const db = client.db();

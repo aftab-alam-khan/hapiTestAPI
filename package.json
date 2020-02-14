@@ -1,6 +1,6 @@
 {
   "name": "code-test",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Code Test base repository",
   "main": "api.js",
   "scripts": {

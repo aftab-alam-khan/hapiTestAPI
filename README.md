@@ -14,7 +14,7 @@ The goal of this exercise is to assess your knowledge of our stack and how you w
 
 ## Setup
 
-This project needs Node (version >= 10) and Docker or Mongo installed on your machine.
+This project needs Node (version >= 12) and Docker or Mongo installed on your machine.
 
 - Download this project to your computer
 - run `npm i`

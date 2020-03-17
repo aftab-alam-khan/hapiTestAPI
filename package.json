@@ -28,7 +28,7 @@
   "homepage": "https://github.com/pagerinc/node-code-test#readme",
   "dependencies": {
     "@hapi/hapi": "19.x",
-    "mongodb": "3.x.x"
+    "mongodb": "3.x"
   },
   "devDependencies": {
     "@hapi/code": "8.x",

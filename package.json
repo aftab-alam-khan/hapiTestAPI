@@ -38,6 +38,10 @@
   "renovate": {
     "extends": [
       "github>pagerinc/renovate-config"
-    ]
+    ],
+    "schedule": "at any time"
+  },
+  "release": {
+    "extends": "@pager/semantic-release-config"
   }
 }

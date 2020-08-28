@@ -4,9 +4,9 @@ Welcome to the backend team code test!
 
 This test consists of a small REST API that we have already started for you.
 
-We have already setup 1 endpoint and its corresponding unit tests.
+We have already setup 1 endpoint and its corresponding unit test.
 
-The unit tests also include (although commented out) other unit tests for 2 more endpoints that you need to implement with the help of one of our engineers.
+The tests also include other commented out unit tests for 2 more endpoints that you need to implement with the help of one of our engineers.
 
 ## Goal
 
@@ -14,7 +14,7 @@ The goal of this exercise is to assess your knowledge of our stack and how you w
 
 ## Setup
 
-This project needs Node (version >= 12) and Docker or Mongo installed on your machine.
+This project needs Node.js (version >= 12) and Docker or Mongo installed on your machine.
 
 - Download this project to your computer
 - run `npm i`
@@ -38,12 +38,10 @@ Thanks and happy coding!
 
 - Hapi:
 
-    https://hapijs.com/tutorials
+    https://hapi.dev/tutorials/?lang=en_US
 
-    https://hapijs.com/api
+    https://hapi.dev/api/
     
 - MongoDB driver for Node:
 
-    http://mongodb.github.io/node-mongodb-native/3.1/quick-start/quick-start/
-    
-    
+    http://mongodb.github.io/node-mongodb-native/3.6/quick-start/quick-start/

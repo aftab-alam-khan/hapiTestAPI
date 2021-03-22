@@ -2,6 +2,6 @@ version: '3.7'
 
 services:
   mongo:
-    image: mongo:4.4-bionic@sha256:d57b1fb5014d2b63c0f396f67d669ff820327758cd315dfca3c34c0d783f910f
+    image: mongo:4.4-bionic@sha256:ec481eee0a44d99767590ce001700b66365db2064d3a20f085c02b7b1fc6797c
     ports:
       - 27017:27017

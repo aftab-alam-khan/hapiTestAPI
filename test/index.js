@@ -109,7 +109,7 @@ describe('Local Grocery API', () => {
     after(async () => {
 
         if (!server) {
-          return;
+            return;
         }
     
         await server.stop();
@@ -126,78 +126,78 @@ describe('Local Grocery API', () => {
         expect(response.result).to.equal(mockLocations);
     });
 
-    // it('returns items sold in a location: GET /locations/{locationId}/items', async () => {
+    it('returns items sold in a location: GET /locations/{locationId}/items', async () => {
 
-    //     const response = await server.inject({
-    //         method: 'GET',
-    //         url: '/locations/1/items'
-    //     });
+        const response = await server.inject({
+            method: 'GET',
+            url: '/locations/1/items'
+        });
 
-    //     const locationItems = mockItems.filter((i) => i.locationId === 1);
+        const locationItems = mockItems.filter((i) => i.locationId === 1);
 
-    //     expect(response.statusCode).to.equal(200);
-    //     expect(response.result).to.equal(locationItems);
-    // });
+        expect(response.statusCode).to.equal(200);
+        expect(response.result).to.equal(locationItems);
+    });
 
-    // it('returns empty when no items in a location: GET /locations/{locationId}/items', async () => {
+    it('returns empty when no items in a location: GET /locations/{locationId}/items', async () => {
 
-    //     const response = await server.inject({
-    //         method: 'GET',
-    //         url: '/locations/3/items'
-    //     });
+        const response = await server.inject({
+            method: 'GET',
+            url: '/locations/3/items'
+        });
 
-    //     expect(response.statusCode).to.equal(200);
-    //     expect(response.result).to.equal([]);
-    // });
+        expect(response.statusCode).to.equal(200);
+        expect(response.result).to.equal([]);
+    });
 
-    // it('returns 404 when location not found: GET /locations/{locationId}/items', async () => {
+    it('returns 404 when location not found: GET /locations/{locationId}/items', async () => {
 
-    //     const response = await server.inject({
-    //         method: 'GET',
-    //         url: '/locations/9999/items'
-    //     });
+        const response = await server.inject({
+            method: 'GET',
+            url: '/locations/9999/items'
+        });
 
-    //     expect(response.statusCode).to.equal(404);
-    // });
+        expect(response.statusCode).to.equal(404);
+    });
 
-    // it('returns a created order: POST /locations/{locationId}/order', async () => {
+    it('returns a created order: POST /locations/{locationId}/order', async () => {
 
-    //     const db = server.app.db;
-    //     const ordersCollection = db.collection('orders');
+        const db = server.app.db;
+        const ordersCollection = db.collection('orders');
 
-    //     const response = await server.inject({
-    //         method: 'POST',
-    //         url: '/locations/1/order',
-    //         payload: {
-    //             customerId: 787,
-    //             items: [{
-    //                 itemId: 20,
-    //                 quantity: 1
-    //             },
-    //             {
-    //                 itemId: 21,
-    //                 quantity: 5
-    //             }]
-    //         }
-    //     });
+        const response = await server.inject({
+            method: 'POST',
+            url: '/locations/1/order',
+            payload: {
+                customerId: 787,
+                items: [{
+                    itemId: 20,
+                    quantity: 1
+                },
+                {
+                    itemId: 21,
+                    quantity: 5
+                }]
+            }
+        });
 
-    //     expect(response.statusCode).to.equal(201);
+        expect(response.statusCode).to.equal(201);
 
-    //     delete response.result._id;
-    //     const savedOrder = await ordersCollection.findOne({ customerId: 787 });
+        delete response.result._id;
+        const savedOrder = await ordersCollection.findOne({ customerId: 787 });
 
-    //     expect(savedOrder).to.exist();
-    //     expect(response.result).to.equal({
-    //         customerId: 787,
-    //         items: [{
-    //             itemId: 20,
-    //             quantity: 1
-    //         },
-    //         {
-    //             itemId: 21,
-    //             quantity: 5
-    //         }],
-    //         total: 20.18
-    //     });
-    // });
+        expect(savedOrder).to.exist();
+        expect(response.result).to.equal({
+            customerId: 787,
+            items: [{
+                itemId: 20,
+                quantity: 1
+            },
+            {
+                itemId: 21,
+                quantity: 5
+            }],
+            total: 20.18
+        });
+    });
 });
